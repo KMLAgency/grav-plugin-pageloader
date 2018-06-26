@@ -1,0 +1,48 @@
+{% set settings = {} %}
+{% set settings = config.get('plugins.pageloader')|merge(settings) %}
+
+<div class="pageloader">
+    {# Round Pulse #}
+    {% if config.plugins.pageloader.select_anime == 'round_pulse' %}
+        <div class="spinner-round-pulse"></div>
+    {% endif %}
+    {# Round Bounce #}
+    {% if config.plugins.pageloader.select_anime == 'round_bounce' %}
+        <div class="spinner-round-bounce">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    {% endif %}
+    {# Bounce Dot #}
+    {% if config.plugins.pageloader.select_anime == 'bounce_dot' %}
+        <div class="spinner-dot-bounce">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    {% endif %}
+    {# Spin Big Dot #}
+    {% if config.plugins.pageloader.select_anime == 'spin_bdot' %}
+        <div class="spinner-bdot-spin">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    {% endif %}
+    {# Rotate Cube #}
+    {% if config.plugins.pageloader.select_anime == 'rotate_cube' %}
+        <div class="spinner-rotate-cube"></div>
+    {% endif %}
+    {# Rotate Double Cube #}
+    {% if config.plugins.pageloader.select_anime == 'rotate_dcube' %}
+        <div class="spinner-rotate-dcube">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    {% endif %}
+</div>
+{# PRE-LOADER Script #}
+<script>
+    $(window).load(function(){
+      $('.pageloader').fadeOut({{settings.fadeout|default(1500)}});
+    });
+</script>

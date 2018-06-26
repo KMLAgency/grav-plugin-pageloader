@@ -1,0 +1,57 @@
+name: Page Loader
+version: 1.0.0
+description: "Adds a simple loader animation to your Grav page"
+icon: spinner
+author:
+  name: Stellaris Studio (Loky)
+  email: stellaristudio@gmail.com
+  url: https://github.com/StellarisStudio
+homepage: https://github.com/StellarisStudio/grav-plugin-pageloader
+keywords: loader, animation, grav, plugin
+bugs: https://github.com/StellarisStudio/grav-plugin-pageloader/issue
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    built_in_css:
+      type: toggle
+      label: Built in CSS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    select_anime:
+      type: select
+      size: medium
+      label: Animations
+      default: round_pulse
+      options:
+        round_pulse: Round Pulse
+        round_bounce: Round Bounce
+        bounce_dot: Bounce Dot
+        spin_bdot: Spin Big Dot
+        rotate_cube: Rotate Cube
+        rotate_dcube: Rotate Double Cube
+
+    fadeout:
+      type: text
+      size: x-small
+      label: Fade Out
+      default: 1500
+      help: set the fade out duration!

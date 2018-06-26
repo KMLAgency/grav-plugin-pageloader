@@ -1,0 +1,4 @@
+enabled: true
+built_in_css: true
+select_anime: round_pulse
+fadeout: 1500
